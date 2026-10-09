@@ -75,45 +75,6 @@ No long sleeps. No flaky wall-clock races. No ad-hoc Python mocks.
 
 ---
 
-## Architecture
-
-TimeTravel is built around:
-
-- A thin Robot Framework keyword layer on `robotframework-pythonlibcore`
-- An internal `ClockController` with explicit lifecycle semantics
-- `time-machine` as the process-local clock backend
-- Duration and datetime parsers with clear validation errors
-- Optional auto-reset after each test
-
-```
-Robot Framework Keywords
-  ↓
-ClockController lifecycle
-  ↓
-time-machine traveller
-  ↓
-Python time / datetime APIs in this process
-```
-
----
-
-## Feature Matrix
-
-| Category | Keywords |
-| --- | --- |
-| Clock control | `Freeze Time`, `Freeze At Timestamp`, `Freeze At Real Time`, `Travel To Time`, `Travel To Timestamp`, `Advance Time`, `Rewind Time`, `Shift Time`, `Start Ticking Time`, `Pause Time`, `Resume Ticking Time`, `Advance To Next Weekday`, `Reset Time` |
-| Inspection | `Get Current Simulated Time`, `Get Current Simulated Timestamp`, `Get Current Simulated Timestamp Ns`, `Get Clock Mode`, `Time Travel Is Active`, `Get Real Time`, `Get Real Timestamp` |
-| Timezone / calendar | `Set Timezone`, `Get Current Timezone`, `Convert Datetime To Timezone`, `Get Current Simulated Time In Timezone`, `Format Simulated Time`, `Get Simulated Weekday` |
-| Assertions | `Simulated Time Should Be`, `Simulated Time Should Be After`, `Simulated Time Should Be Before`, `Simulated Timestamp Should Equal`, `Time Until Should Be`, `Fail If Time Travel Is Active` |
-
-Implementation note:
-
-- `src/TimeTravel/keywords/clock_control.py` — clock control and inspection
-- `src/TimeTravel/keywords/timezone_control.py` — timezone/calendar helpers
-- `src/TimeTravel/keywords/assertions.py` — assertion keywords
-
----
-
 ## Quick Start
 
 Install from PyPI:
@@ -159,6 +120,45 @@ By default TimeTravel auto-resets at the end of every test. Disable with:
 ```robot
 Library    TimeTravel    auto_reset=${False}
 ```
+
+---
+
+## Architecture
+
+TimeTravel is built around:
+
+- A thin Robot Framework keyword layer on `robotframework-pythonlibcore`
+- An internal `ClockController` with explicit lifecycle semantics
+- `time-machine` as the process-local clock backend
+- Duration and datetime parsers with clear validation errors
+- Optional auto-reset after each test
+
+```
+Robot Framework Keywords
+  ↓
+ClockController lifecycle
+  ↓
+time-machine traveller
+  ↓
+Python time / datetime APIs in this process
+```
+
+---
+
+## Feature Matrix
+
+| Category | Keywords |
+| --- | --- |
+| Clock control | `Freeze Time`, `Freeze At Timestamp`, `Freeze At Real Time`, `Travel To Time`, `Travel To Timestamp`, `Advance Time`, `Rewind Time`, `Shift Time`, `Start Ticking Time`, `Pause Time`, `Resume Ticking Time`, `Advance To Next Weekday`, `Reset Time` |
+| Inspection | `Get Current Simulated Time`, `Get Current Simulated Timestamp`, `Get Current Simulated Timestamp Ns`, `Get Clock Mode`, `Time Travel Is Active`, `Get Real Time`, `Get Real Timestamp` |
+| Timezone / calendar | `Set Timezone`, `Get Current Timezone`, `Convert Datetime To Timezone`, `Get Current Simulated Time In Timezone`, `Format Simulated Time`, `Get Simulated Weekday` |
+| Assertions | `Simulated Time Should Be`, `Simulated Time Should Be After`, `Simulated Time Should Be Before`, `Simulated Timestamp Should Equal`, `Time Until Should Be`, `Fail If Time Travel Is Active` |
+
+Implementation note:
+
+- `src/TimeTravel/keywords/clock_control.py` — clock control and inspection
+- `src/TimeTravel/keywords/timezone_control.py` — timezone/calendar helpers
+- `src/TimeTravel/keywords/assertions.py` — assertion keywords
 
 ---
 
