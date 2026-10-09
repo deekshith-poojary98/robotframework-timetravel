@@ -1,0 +1,84 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+*.egg
+pip-wheel-metadata/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+htmlcov/
+.pytest_cache/
+.ruff_cache/
+
+# Translations
+*.mo
+
+# Logs
+*.log
+local_settings.py
+
+# Sphinx documentation
+docs/_build/
+
+# pyenv
+.python-version
+
+# virtualenv
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# mypy
+.mypy_cache/
+mypy_cache/
+
+# Robot Framework output
+output.xml
+report.html
+log.html
+tests/robot/results/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Editors
+*.swp
+*~
+*.swo
