@@ -58,7 +58,7 @@ every suite.
 * Unit, integration, and Robot Framework acceptance coverage
 * Executable examples for OTP, JWT, subscription, license, and timezone scenarios
 * Wheel and source distribution packaging
-* CI matrix for Python 3.10–3.14
+* CI matrix for Python 3.11–3.14
 
 ### Documented Limitations
 

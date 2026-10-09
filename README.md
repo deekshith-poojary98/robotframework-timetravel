@@ -14,7 +14,7 @@
     <img src="https://badge.fury.io/py/robotframework-timetravel.svg" alt="PyPI version">
 </a>
 
-<img src="https://img.shields.io/badge/python-3.10%2B-blue" alt="Python 3.10+">
+<img src="https://img.shields.io/badge/python-3.11%2B-blue" alt="Python 3.11+">
 
 <img src="https://img.shields.io/badge/robotframework-7.5%2B-blue" alt="Robot Framework 7.5+">
 
